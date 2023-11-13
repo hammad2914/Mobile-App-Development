@@ -313,13 +313,9 @@ b {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgba(246, 145, 16,0.8);
+    background-color: rgba(246, 145, 16);
 }
-.service-box:hover{
-    background-image: url('../images/phone-mobile-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 .service-box:hover::before{
     width: 100%;
 }
