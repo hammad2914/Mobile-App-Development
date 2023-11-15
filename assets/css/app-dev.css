@@ -30,6 +30,75 @@ html::-webkit-scrollbar-track {
 
 }
 
+.header {
+    padding: 0px 20px;
+    align-items: center;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    margin-bottom: 10px;
+}
+
+.header img {
+    width: 200px;
+}
+
+.header .quote-btn {
+    margin-top: 0px;
+}
+
+.nav-links {
+    width: auto;
+}
+
+.nav-links ul {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.menu-item {
+    list-style: none;
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin: 0px 40px;
+    color: #000;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 0px;
+}
+
+.menu-item:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0px;
+    left: 50%;
+    bottom: 0%;
+    display: block;
+    transition: all 0.3s ease-in;
+    background: #F69110;
+}
+
+.menu-item:hover .menu-link {
+    color: #F69110;
+    cursor: pointer;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+    left: 0%;
+}
+
+.menu-link {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.1s ease-in;
+}
+
+@media(max-width:992px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 .headline-wrap {
     background-color: #fff;
     min-height: 500px;
@@ -304,8 +373,9 @@ b {
     height: 100%;
     text-align: left;
     position: relative;
-    transition: all 0.5s;
+    overflow: hidden;
 }
+
 .service-box::before {
     content: "";
     position: absolute;
@@ -316,15 +386,18 @@ b {
     background-color: rgba(246, 145, 16);
 }
 
-.service-box:hover::before{
+.service-box:hover::before {
     width: 100%;
 }
-.service-box:hover .icon svg{
+
+.service-box:hover .icon svg {
     fill: #fff !important;
 }
-.service-box:hover h3, .service-box:hover p{
+
+.service-box:hover h3, .service-box:hover p {
     color: #fff;
 }
+
 .icon {
     text-align: left;
     z-index: 1;
@@ -604,12 +677,12 @@ input:focus-visible, textarea:focus-visible {
 .quote-container {
     position: relative;
     z-index: 2;
-  }
-  
-  .form-open-button {
+}
+
+.form-open-button {
     position: fixed;
     top: 50%;
-    right: -70px;
+    right: -75px;
     transform: rotate(-90deg);
     border: none;
     cursor: pointer;
@@ -623,12 +696,13 @@ input:focus-visible, textarea:focus-visible {
     border-radius: 30px 30px 0 0;
     line-height: 50px;
     box-shadow: 0 1px 3px 0 #000000c2;
-  }
-  
-  .quote-fix-form {
+}
+
+.quote-fix-form {
     position: fixed;
     top: 0;
-    right: -300px; /* Initially hide off-screen */
+    right: -300px;
+    /* Initially hide off-screen */
     width: 300px;
     top: 15%;
     height: 70%;
@@ -636,18 +710,21 @@ input:focus-visible, textarea:focus-visible {
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
-  }
-  .quote-fix-form form{
+}
+
+.quote-fix-form form {
     padding: 0%;
-  }
-  .quote-fix-form form input, .quote-fix-form form textarea{
+}
+
+.quote-fix-form form input, .quote-fix-form form textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #F69110;
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  .quote-fix-form form button{
+}
+
+.quote-fix-form form button {
     width: 100%;
     padding: 8px;
     text-align: center;
@@ -658,14 +735,15 @@ input:focus-visible, textarea:focus-visible {
     font-size: 14px;
     font-weight: 700;
     transition: all 0.3s;
-  }
-  .quote-fix-form form button:hover{
+}
+
+.quote-fix-form form button:hover {
     background-color: #fff;
     color: #F69110;
     border: 2px solid #F69110;
-  }
-  
-  .close-button {
+}
+
+.close-button {
     position: absolute;
     top: 0px;
     right: 15px;
@@ -673,46 +751,78 @@ input:focus-visible, textarea:focus-visible {
     border: none;
     font-size: 2.5em;
     cursor: pointer;
-  }
-  
-  .quote-fix-form h2 {
+}
+
+.quote-fix-form h2 {
     margin-bottom: 20px;
     color: #000;
     font-weight: 700;
-  }
+}
+
+/* Scroll btn */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #F69110;
+    color: #000;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+}
 
 /* Responsive */
 
-@media(max-width:1100px){
-    html{
+@media(max-width:1100px) {
+    html {
         font-size: 60%;
     }
+
     .headline-text h1 {
         font-size: 4rem;
     }
-    .services-wrap h1, .portfolio-wrap h1, .our-work-wrap h1, .our-advantage-wrap h1,.awards-wrap h1  {
+
+    .services-wrap h1, .portfolio-wrap h1, .our-work-wrap h1, .our-advantage-wrap h1, .awards-wrap h1 {
         font-size: 3.5rem;
     }
 }
 
-@media(max-width:850px){
-    html{
+@media(max-width:850px) {
+    html {
         font-size: 55%;
     }
 }
-@media(max-width:450px){
-    html{
+
+@media(max-width:450px) {
+    html {
         font-size: 50%;
     }
+
+    .header img {
+        width: 150px;
+    }
 }
-@media(max-width:768px){
-    .our-work-image, .portfolio-image{
+
+@media(max-width:768px) {
+    .headline-wrap {
+        margin-top: 30px;
+    }
+
+    .our-work-image, .portfolio-image {
         margin-top: 40px;
     }
+
     .quote-btn {
         width: 120px;
         height: 40px;
         line-height: 38px;
-    
+
     }
 }
